@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryggeriet i Ystad</title>
+    @Styles.Render("~/Styles/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+
+</head>
+<body class="home">
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div> <!-- END #preloader -->
+    <div class="menu_target" id="index-slider">
+        <div id="holder">
+            <div id="maximage">
+                <div>
+                    <img src="~/Content/img/slideOne.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="~/content/img/slideOne.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="~/content/img/slideOne.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="~/content/img/slideOne.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="~/content/img/slideOne.jpg" alt="" />
+                </div>
+            </div> <!-- END #maximage -->
+        </div> <!-- END #holder -->
+        <div class="container">
+            <header class="header">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="logo pull-left"></div>
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div> <!-- .navbar-header -->
+                        <div class="collapse navbar-collapse" id="collapse">
+                            <ul class="cl-effect-3 nav nav-justified" id="cl-effect-3">
+                                <li id="current_menu_item"><a href="#index-slider">Hem</a></li>
+                                <li><a href="#about">Bryggeriet</a></li>
+                                <li><a href="#myCarousel">Galleri</a></li>
+                                <li><a href="#menu">Matsedel</a></li>
+                                <li><a href="#blog">På gång</a></li>
+                                <li><a href="#clients">Samarbeten</a></li>
+                                <li><a href="#contact">Kontakt</a></li>
+                            </ul> <!-- END .cl-effect-3, .nav, .nav-justified -->
+                        </div> <!-- END .collapse, .navbar-collapse -->
+                        <a href="#small-dialog" class="popup-with-zoom-anim"><i class="fa fa-search"></i></a>
+                        <form id="small-dialog" class="animated fadeInUp zoom-anim-dialog mfp-hide">
+                            <fieldset style="border:0;">
+                                <ol>
+                                    <li>
+                                        <span><i class="fa fa-search"></i></span>
+                                        <input id="search" name="search" type="text" placeholder="Type here." autocomplete="off" required>
+                                    </li>
+                                </ol>
+                            </fieldset>
+                        </form> <!-- END #small-dialog -->
+                    </div> <!-- END .container -->
+                </nav> <!-- END .navbar, .navbar-default, navbar-fiexed-top -->
+            </header> <!-- END .header -->
+
+            <div class="intro">
+                <div class="intro-inner">
+                    <h1><br></h1>               
+                </div> <!-- END .intro-inner -->
+            </div> <!-- END .intro -->
+
+        </div> <!-- END .container -->
+    </div> <!-- END #home -->
+    @RenderBody()
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <ul class="triggerAnimation animated social" data-animate="pulse">
+                    <li class="remove-left">
+                        <a href="~/Views/Shared/Error.cshtml"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    -->
+                    <li>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    -->
+                </ul> <!-- END .triggerAnimation, .animated, .social -->
+                <footer class="copyright">
+                    <p>&copy; Bryggeriet 2015. All rights reserved.</p>
+                </footer> <!-- END .copyright -->
+            </div> <!-- END .row -->
+        </div> <!-- END .container -->
+    </div> <!-- END #footer -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+    $(function () {
+        // Trigger maximage
+        $('#maximage').maximage({
+            cycleOptions: {
+                speed: 100000
+                
+            },
+            fillElement: '#holder',
+            backgroundSize: 'contain'
+        });
+    });
+    </script>
+</body>
+</html>
