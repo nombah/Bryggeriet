@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Ystadbryggeriet.Models.CalendarEvent>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src='~/Content/lib/js/moment.min.js'></script>
+<script src='~/Content/lib/js/jquery.min.js'></script>
+<script src="~/Content/lib/js/fullcalendar.min.js"></script>
+<script src="~/Content/lib/js/lang-all.js"></script>
+
+<div class="content">
+        <div class="col-md-10">
+            <div class="wdgt">
+                <div class="wdgt-header">Schema</div>
+                <div class="wdgt-body" style="padding-bottom:10px;">
+                    <div id='calendar'></div>
+                    <div style='clear:both'></div>
+                </div>
+            </div>
+        </div>
+</div>
+    <div id='calendar'></div>
+<script>
+    $(document).ready(function () {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            axisFormat: 'HH:mm',
+            firstHour: '09',
+            minTime: '09:00:00',
+            allDayText: 'Helpanna',
+            editable: false,
+            droppable: true, // this allows things to be dropped onto the calendar !!!
+            lang: 'sv',
+            defaultView: 'agendaWeek',
+            events: "/CalendarEvents/getEvents",
+            timeFormat: 'H(:mm)',
+        });
+    });
+</script> 
+    <style>
+        .Servitris,
+        .Servitris,
+        .Servitris  { 
+            background: green !important; /* background color */
+            border-color: black !important; /* border color */
+            color: yellow; /* text color */
+        }
+        .Runner,
+        .Runner,
+        .Runner  { 
+            background: Yellow !important; /* background color */
+            border-color: black !important; /* border color */
+            color: Blue; /* text color */
+        }
+        .Hovmästare,
+        .Hovmästare,
+        .Hovmästare  { 
+            background: pink !important; /* background color */
+            border-color: black !important; /* border color */
+            color: Blue; /* text color */
+        }
+
+
+
+
+</style>

@@ -17,6 +17,7 @@ namespace Ystadbryggeriet.Models
             return userIdentity;
         }
         public string Name { get; set; }
+        public string Role { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -30,7 +31,6 @@ namespace Ystadbryggeriet.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<events> events { get; set; }
         public DbSet<PageModel> PageModels { get; set; }
 
         public System.Data.Entity.DbSet<Ystadbryggeriet.Models.Happenings> Happenings { get; set; }
@@ -38,5 +38,12 @@ namespace Ystadbryggeriet.Models
         public System.Data.Entity.DbSet<Ystadbryggeriet.Models.Question> Questions { get; set; }
 
         public System.Data.Entity.DbSet<Ystadbryggeriet.Models.Test> Tests { get; set; }
+
+        public System.Data.Entity.DbSet<Ystadbryggeriet.Models.Message> Messages { get; set; }
+
+        public System.Data.Entity.DbSet<Ystadbryggeriet.Models.CalendarEvent> CalendarEvents { get; set; }
+
+
+
     }
 }

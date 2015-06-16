@@ -308,7 +308,7 @@ html {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.428571429;
   background-color: #ffffff;
 }
@@ -402,7 +402,7 @@ h6,
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: 1.5;
-  color: #3c3547;
+  color: #000000;
 }
 
 h1 small,
@@ -437,7 +437,7 @@ h6 .small,
 h1,
 h2,
 h3 {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 

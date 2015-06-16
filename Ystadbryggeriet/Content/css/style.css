@@ -27,7 +27,7 @@ h1,
 h2,
 .h1,
 .h2 {
-  font-family: "Pacifico", Helvetica, Arial, sans-serif;
+  font-family: "Cardio";
 }
 
 blockquote { margin: 50px 0; }
@@ -36,9 +36,9 @@ h2 {
 	color: #103848;
 }
 p, a { 
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-family: "Cardio";
 	font-size: 1.2em;
-	color: #7c8087;
+	color: #000000;
 	line-height: 1.7em;
 }
 
@@ -52,7 +52,7 @@ body {
 	margin:0; padding:0;
 }
 
-.row { text-align: center; margin-top: 60px; }
+.row { text-align: center; margin-top: 25px; }
 
 .col-centered {
 	float: none !important;
@@ -555,8 +555,8 @@ header.header nav i:hover { color: #103848; }
 	line-height: 22px;
 	padding-top: 20px;
 	border-right: 1px solid #d5d5d5;
-	width: 80px;
-	height: 80px;
+	width: 100px;
+	height: 60px;
 	margin-bottom: 25px;
 }
 
@@ -566,7 +566,7 @@ header.header nav i:hover { color: #103848; }
 	font-size: 34px;
 } 
 
-#blog .date, #blog .entry .row .comments a { color: #8c9199; font-weight: bold; }
+#blog .date, #blog .entry .row .comments a { color: #000000; font-weight: bold; }
 
 #blog .entry .row .comments { 
 	position: absolute;
@@ -577,7 +577,7 @@ header.header nav i:hover { color: #103848; }
 #blog .entry .row { 
 	border-bottom: 2px dotted #e1e1e1;
 	position: relative; 
-	padding-bottom: 50px;
+	padding-bottom: 5px;
 }
 
 #blog .entry .row:last-child { border-bottom: none; }
@@ -590,7 +590,7 @@ header.header nav i:hover { color: #103848; }
 	width: 85%;
 }
 
-#blog .entry .row > div h5 a { color: #3c3547; }
+#blog .entry .row > div h5 a { color: #000000; }
 #blog .entry .row > div .btn { 
 	margin-top: 30px; 
 	color: #103848;

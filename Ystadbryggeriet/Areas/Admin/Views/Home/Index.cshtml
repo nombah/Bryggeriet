@@ -1,7 +1,187 @@
-﻿
+﻿@model Ystadbryggeriet.Areas.Admin.Viewmodel.PageViewModel
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>swaggg</h2>
+<div class="content">
+    <div class="page-h1">
+        <h1>Dashboard <small>// Schema och administration</small></h1>
+    </div>
+</div>
+@foreach (var page in Model.pagemodel)
+{
+    if (page.Title == "Information")
+    {
+        <div class="tbl">
+            <div class="col-md-12">
+                <div class="wdgt wdgt-primary">
+                    <div class="wdgt-header">
+                        Information till de anställda!
+                        <span style="float:right; position:relative; top:-2px; right:-2px;">
+                            <button class="btn btn-primary btn-xs" id="clearSelection">Clear selection</button>
+                        </span>
+                    </div>
+                    <div class="wdgt-body" style="padding-bottom:10px;">
+                        <div id="placeholder2" class="demo-placeholder" style="height:346px;margin:20px 5px;">
+                            <p> @Html.Raw(System.Web.HttpUtility.HtmlDecode(page.PageText))</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}  
+   <div class="tbl">
+    <div class="col-md-6">
+        <div class="wdgt wdgt-soft" hide-btn="true" close-btn="true">
+            <div class="wdgt-header">Anställda</div>
+            <div class="wdgt-body wdgt-table" style="padding-bottom:10px;">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Namn</th>
+                            <th>Arbete</th>
+                            <th>Kontakta</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+@foreach (var user in Model.Users)
+            {
+            <text>
+                <tr>
+                    <td> @user.Name </td>
+                    <td>
+                        <span class="label label-success"> @user.Role </span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs"><i class="icon icon-camera"></i></button>
+                        <button type="button" class="btn btn-info btn-xs"><i class="icon icon-bookmark"></i></button>
+                        <button type="button" class="btn btn-soft btn-xs"><i class="icon icon-edit"></i></button>
+                    </td>
+                </tr>
+            </text>
+            } 
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+          
+    <div class="col-md-6">
+        <div class="wdgt wdgt-info" hide-btn="true" close-btn="true">
+            <div class="wdgt-header">Lediga pass</div>
+            <div class="wdgt-body" style="">
+
+                <ul class="sortable">
+                    <li class="sort-default">
+                        <span class="icon icon-bookmark"></span>INTE KLART ÄN
+                    </li>
+                    <li class="sort-primary">
+                        <span class="icon icon-camera"></span>INTE KLART ÄN
+                    </li>
+                    <li class="sort-warning">
+                        <span class="icon icon-edit"></span>INTE KLART ÄN
+                    </li>
+                    <li class="sort-success">
+                        <span class="icon icon-exclamation-sign"></span>INTE KLART ÄN
+                    </li>
+                    <li class="sort-info">
+                        <span class="fa fa-dashboard"></span>INTE KLART ÄN
+                    </li>
+                    <li class="sort-soft">
+                        <span class="fa fa-gears"></span>INTE KLART ÄN
+                    </li>
+                </ul>
+
+                <style>
+                    .sortable > .sort-default {
+                        background: #f4f4f4;
+                        border-color: #CCC;
+                        color: #333;
+                    }
+
+                    .sortable > .sort-primary {
+                        background: #7BAEDA;
+                        border-color: #357ebd;
+                        color: #FFF;
+                    }
+
+                    .sortable > .sort-warning {
+                        background: #F4C583;
+                        border-color: #eea236;
+                        color: #FFF;
+                    }
+
+                    .sortable > .sort-danger {
+                        background: #E48784;
+                        border-color: #d43f3a;
+                        color: #FFF;
+                    }
+
+                    .sortable > .sort-success {
+                        background: #8DCD8D;
+                        border-color: #4cae4c;
+                        color: #FFF;
+                    }
+
+                    .sortable > .sort-info {
+                        background: #8CD3E8;
+                        border-color: #46b8da;
+                        color: #FFF;
+                    }
+
+                    .sortable > .sort-soft {
+                        background: #ACACCF;
+                        border-color: #73738E;
+                        color: #FFF;
+                    }
+
+                    .sortable > .sort-dark {
+                        background: #A0A0A0;
+                        border-color: #666;
+                        color: #FFF;
+                    }
+
+                    .sortable > .sort-bright {
+                        background: #FFC9ED;
+                        border-color: #FF98DD;
+                        color: #333;
+                    }
+
+                    .sortable {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                        .sortable > li:hover {
+                            cursor: move;
+                        }
+
+                        .sortable > li {
+                            width: 100%;
+                            height: 40px;
+                            line-height: 20px;
+                            padding: 10px 10px;
+                            border: 1px solid #ccc;
+                            background: #EFEFEF;
+                            margin-bottom: 10px;
+                        }
+
+                            .sortable > li .icon, .sortable > li .fa {
+                                margin-right: 10px;
+                            }
+
+                        .sortable .sort-highlight {
+                            border: 1px dotted #ccc !important;
+                            background: #FFFFFF !important;
+                        }
+                </style>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT -->
 

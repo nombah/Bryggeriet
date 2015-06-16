@@ -9,9 +9,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Ystadbryggeriet.Models;
+using Ystadbryggeriet.Areas.Admin.Viewmodel;
 
 namespace Ystadbryggeriet.Areas.Admin.Controllers
 {
+
     [Authorize]
     public class AccountController : Controller
     {
@@ -21,7 +23,12 @@ namespace Ystadbryggeriet.Areas.Admin.Controllers
         public AccountController()
         {
         }
+        private ApplicationDbContext db = new ApplicationDbContext();
+        public ActionResult Admin()
+        {
 
+            return View();
+        }
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;

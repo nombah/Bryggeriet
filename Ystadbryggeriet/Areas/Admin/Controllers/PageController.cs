@@ -10,7 +10,7 @@ using Ystadbryggeriet.Models;
 
 namespace Ystadbryggeriet.Areas.Admin.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class PageController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -21,7 +21,6 @@ namespace Ystadbryggeriet.Areas.Admin.Controllers
             ViewBag.titles = "Administrera hemsidan";
             return View(db.PageModels.ToList());
         }
-
         // GET: Admin/Page/Details/5
         public ActionResult Details(int? id)
         {

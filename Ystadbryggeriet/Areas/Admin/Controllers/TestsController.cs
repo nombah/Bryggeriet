@@ -21,7 +21,12 @@ namespace Ystadbryggeriet.Areas.Admin.Controllers
         {
             return View(db.Tests.ToList());
         }
-
+        public ActionResult Prov()
+        {
+            var TestViewmodel = new TestViewModel();
+            TestViewmodel.tests = db.Tests.ToList();
+            return View(TestViewmodel);
+        }
         // GET: Admin/Tests/Details/5
         public ActionResult Details(int? id)
         {

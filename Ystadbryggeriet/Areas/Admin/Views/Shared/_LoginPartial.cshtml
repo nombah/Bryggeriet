@@ -20,3 +20,44 @@ else
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }
+<div class="hov">
+
+    <div class="btn-group">
+        <a class="con" href="" data-toggle="dropdown"><span class="icon icon-envelope"></span><span class="label label-success">5</span></a>
+        <ul class="dropdown-menu pull-right dropdown-messages" role="menu">
+            <li class="title"><span class="icon icon-envelope"></span>&nbsp;&nbsp;You have 13 new messages to read...</li>
+            <li class="message">
+                <div class="message-icon"><img src="lib/img/users/1.png"></div>
+                <div class="message-content"><a href="#">Steve</a> Lorem ipsum dolor sit amet...</div>
+                <div class="message-time">32 sec ago</div>
+            </li>
+            <li class="message">
+                <div class="message-icon"><img src="lib/img/users/2.png"></div>
+                <div class="message-content"><a href="#">John</a> Quisque commodo sed ipsum...</div>
+                <div class="message-time">11 min ago</div>
+            </li>
+            <li class="message">
+                <div class="message-icon"><img src="lib/img/users/3.png"></div>
+                <div class="message-content"><a href="#">Susan</a> Consectetur adipiscing elit...</div>
+                <div class="message-time">3 hours ago</div>
+            </li>
+            <li class="message">
+                <div class="message-icon"><img src="lib/img/users/4.png"></div>
+                <div class="message-content"><a href="#">Barbara</a> Quisque commodo sed ipsum...</div>
+                <div class="message-time">2 days ago</div>
+            </li>
+            <li class="divider"></li>
+            <li><a href="#">View all new messages...</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <a class="con" href="" data-toggle="dropdown"><span class="icon icon-user"></span><span class="label label-primary">+5</span></a>
+        <ul class="dropdown-menu pull-right dropdown-profile" role="menu">
+            <li class="title"><span class="icon icon-user"></span>@User.Identity.GetUserName()</li>
+            <li><a href="@Url.Action("ChangePassword", "Manage")"><span class="fa fa-gears"></span>Settings</a></li>
+            <li><a href="#"><span class="icon icon-envelope"></span>Messages</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><span class="fa fa-power-off"></span>Logout</a></li>
+        </ul>
+    </div>
+</div>

@@ -10,5 +10,7 @@ namespace Ystadbryggeriet.Areas.Admin.Viewmodel
     {
         public List<PageModel> pagemodel { get; set; }
         public List<Happenings> happenings { get; set; }
+        public List<ApplicationUser> Users { get; set; }
+        public int Unread { get; set; }
     }
 }

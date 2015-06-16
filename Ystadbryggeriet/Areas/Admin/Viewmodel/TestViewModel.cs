@@ -8,7 +8,6 @@ namespace Ystadbryggeriet.Areas.Admin.Viewmodel
 {
     public class TestViewModel
     {
-        public List<Question> questions { get; set; }
-        public Test test { get; set; }
+        public List<Test> tests { get; set; }
     }
 }

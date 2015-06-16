@@ -20,21 +20,13 @@
 }
 
 <div id="myCarousel" class="carousel slide">
-    <ol class="carousel-indicators">
-        <li data-target="#myCaraousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCaraousel" data-slide-to="1" class="active"></li>
-        <li data-target="#myCaraousel" data-slide-to="2" class="active"></li>
-    </ol>
-
     <div class="carousel-inner">
 
         <div class="item active">
             <img src="~/Content/img/slide1.jpg" style=" width:2000px;"/>
+
             <div class="container">
                 <div class="carousel-caption">
-                    <p>
-                        You aint born with swag, u earn it by making fun of jews! - Niklas johansson
-                    </p>
                 </div>
             </div>
         </div>
@@ -55,8 +47,9 @@
             <section class="row">
                 <div class="col-sm-10 col-centered">
                     <div class="triggerAnimation animated" data-animate="fadeInDown">
-                        <p>@Html.DisplayFor(modelItem => page.Title)</p> 
+                        <center> 
                         <p> @Html.Raw(System.Web.HttpUtility.HtmlDecode(page.PageText))</p>
+                        </center>
                     </div>
                 </div>
             </section>
@@ -82,68 +75,64 @@
         </div> <!-- END .row -->
     </div> <!-- END .container -->
 </div> <!-- END .menu_target, #clients -->
+<br>
 
-@foreach (var happening in Model.happenings)
-{
 <div class="container menu_target" id="blog">
-<div class="row">
-    <article class="entry col-md-12 col-centered">
-        <div class="triggerAnimation animated row" data-animate="fadeIn">
-            <span class="date pull-left">@Html.DisplayFor(modelItem => happening.Date)</span>
-            <div class="col-md-9 col-md-offset-1 col-sm-8 col-sm-offset-1 col-xs-12">
-                <h5><a href="news-single.html">@Html.DisplayFor(modelItem => happening.Title)</a></h5>
-                <p>@Html.DisplayFor(modelItem => happening.Information)</p>
+    <center><h1>Händelser</h1></center>
+    @foreach (var happening in Model.happenings)
+    {
+            <div class="row">
+                <article class="entry col-md-12 col-centered">
+                    <div class="triggerAnimation animated row" data-animate="fadeIn">
+                        <span class="date pull-left"><strong>@Html.DisplayFor(modelItem => happening.Date.Day)/@Html.DisplayFor(modelItem => happening.Date.Month)</strong></span>
+                        <div class="col-md-9 col-md-offset-1 col-sm-8 col-sm-offset-1 col-xs-12">
+                            <h4><a href="news-single.html">@Html.DisplayFor(modelItem => happening.Title)</a></h4>
+                            @Html.DisplayFor(modelItem => happening.Information)
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div> 
-    </article> 
+    }
 </div>
-</div> 
-}
+    <div class="contact-bg menu_target" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-centered">
 
-<div class="contact-bg menu_target" id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-centered">
+                    <h2>Kontakta oss</h2>
+                    <div class="row">
+                        <div class="triggerAnimation animated contact-wrap col-md-7 col-xs-12" data-animate="fadeInLeft">
+                            <form action="#" id="contact-form">
+                                <div id="success"></div>
+                                <ul>
+                                    <li class="input-name">
+                                        <input type="text" id="name" class="required" placeholder="Namn">
+                                    </li> <!-- END input-name -->
+                                    <li class="input-email">
+                                        <input type="text" id="email" class="email" placeholder="Email adress">
+                                    </li> <!-- END input-name -->
+                                    <li class="input-subject">
+                                        <input type="text" id="subject" placeholder="Ämne">
+                                    </li> <!-- END input-name -->
+                                    <li class="input-subject">
+                                        <textarea rows="7" cols="50" id="message" class="required" placeholder="Meddelande"></textarea>
+                                    </li> <!-- END input-name -->
+                                </ul> <!-- END #contact -->
+                                <button type="submit" class="btn btn-primary btn-lg pull-right">Skicka</button>
+                            </form>
 
-                <h2>Kontakta oss</h2>
-                <div class="row">
-                    <div class="triggerAnimation animated contact-wrap col-md-7 col-xs-12" data-animate="fadeInLeft">
-                        <form action="#" id="contact-form">
-                            <div id="success"></div>
-                            <ul>
-                                <li class="input-name">
-                                    <input type="text" id="name" class="required" placeholder="Namn">
-                                </li> <!-- END input-name -->
-                                <li class="input-email">
-                                    <input type="text" id="email" class="email" placeholder="Email adress">
-                                </li> <!-- END input-name -->
-                                <li class="input-subject">
-                                    <input type="text" id="subject" placeholder="Ämne">
-                                </li> <!-- END input-name -->
-                                <li class="input-subject">
-                                    <textarea rows="7" cols="50" id="message" class="required" placeholder="Meddelande"></textarea>
-                                </li> <!-- END input-name -->
-                            </ul> <!-- END #contact -->
-                            <button type="submit" class="btn btn-primary btn-lg pull-right">Skicka</button>
-                        </form>
-
-                    </div> <!-- END .col-md-7 -->
-                    <div class="triggerAnimation animated col-md-5 col-xs-12" data-animate="fadeInRight">
-                        <h4>Ring för att boka bord</h4>
-                        <p><i class="fa fa-map-marker"></i> Långgatan 20, Ystad</p>
-                        <p><i class="fa fa-phone"></i> 0411 - 699 99</p>
-                        <p><i class="fa fa-envelope"></i> Bokning@Ystadbryggeriet.se</p>
-
-                        @foreach (var page in Model.pagemodel)
-                        {
-                            if (page.Title == "Oppetider")
+                        </div> <!-- END .col-md-7 -->
+                        <div class="triggerAnimation animated col-md-5 col-xs-12" data-animate="fadeInRight">
+                            @foreach (var page in Model.pagemodel)
                             {
-                                                <p> @Html.Raw(System.Web.HttpUtility.HtmlDecode(page.PageText))</p>
+                                if (page.Title == "Oppetider")
+                                {
+                                    <h4> @Html.Raw(System.Web.HttpUtility.HtmlDecode(page.PageText))</h4>
+                                }
                             }
-                        }
-                    </div> <!-- END .col-md-5 -->
-                </div> <!-- END .row -->
-            </div> <!-- END .col-md-10 -->
-        </div> <!-- END .row -->
-    </div> <!-- END .container -->
-</div> <!-- END .contact-bg -->
+                        </div> <!-- END .col-md-5 -->
+                    </div> <!-- END .row -->
+                </div> <!-- END .col-md-10 -->
+            </div> <!-- END .row -->
+        </div> <!-- END .container -->
+    </div> <!-- END .contact-bg -->

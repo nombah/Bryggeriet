@@ -1,0 +1,24 @@
+﻿@model Ystadbryggeriet.Areas.Admin.Viewmodel.TestViewModel
+@{
+}
+<center>
+    @foreach (var page in Model.tests)
+    {
+            if (page.Title == "Pokemon")
+            {
+                @page.Title
+                <br>
+        <form>
+                @foreach (var question in page.Question)
+                {
+                    @question.Questions
+
+                    <p>svar:</p>
+                    @Html.TextBoxFor(model => question.Answer, new { htmlAttributes = new { @class = "form-control" } })
+                    
+                    <br>
+                }
+        </form>
+            }
+    }
+</center>

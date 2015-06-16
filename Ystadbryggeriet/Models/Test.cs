@@ -10,7 +10,7 @@ namespace Ystadbryggeriet.Models
         public int TestID { get; set; }
         public string Title { get; set; }
         public string Info { get; set; }
-        public List<Question> Question { get; set; }
+        public virtual List<Question> Question { get; set; }
     }
 
 }
