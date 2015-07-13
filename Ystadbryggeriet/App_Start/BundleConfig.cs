@@ -24,7 +24,6 @@ namespace Ystadbryggeriet
                       "~/Scripts/respond.js",
                       "~/Scripts/jquery-1.10.1.min.js",
                       "~/Scripts/scripts.js",
-                      "~/Scripts/googleMaps.js",
                       "~/Scripts/jquery.flexslider-min.js",
                       "~/Scripts/jquery.magnific-popup.min.js",
                       "~/Scripts/toucheffects.js",
@@ -64,6 +63,13 @@ namespace Ystadbryggeriet
                       "~/Content/fullcalendar.min.css",
                       "~/Content/site.css"
                       ));
+            bundles.Add(new StyleBundle("~/Content/login").Include(
+                "~/Content/lib/css/font-awesome.min.css",
+                "~/Content/lib/css/bootstrap.min.css",
+                "~/Content/lib/css/fonts.css",
+                "~/Content/lib/css/soft-admin.css",
+                "~/Content/lib/css/icheck.css?v=1.0.1"
+                ));
         }
     }
 }

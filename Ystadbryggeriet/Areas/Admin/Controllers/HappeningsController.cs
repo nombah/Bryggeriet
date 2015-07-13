@@ -10,7 +10,7 @@ using Ystadbryggeriet.Models;
 
 namespace Ystadbryggeriet.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class HappeningsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

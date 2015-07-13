@@ -13,6 +13,7 @@ namespace Ystadbryggeriet.Models
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            await manager.AddClaimAsync(this.Id, new Claim("Name", this.Name)); //Added Claim here
             // Add custom user claims here
             return userIdentity;
         }
@@ -22,10 +23,6 @@ namespace Ystadbryggeriet.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
 
         public static ApplicationDbContext Create()
         {

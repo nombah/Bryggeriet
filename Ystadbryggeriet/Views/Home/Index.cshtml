@@ -30,12 +30,15 @@
                 </div>
             </div>
         </div>
+        <div class="item">
+            <img src="~/Content/img/slide2.jpg" style=" width:2000px;" />
+        </div>
     </div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-circle-arrow-left"></span>
     </a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>
 
@@ -59,7 +62,7 @@
 <div class="menu_target" id="clients">
     <div class="container">
         <div class="row">
-            <h2>Sammarbeten</h2>
+            <h2>Catering</h2>
             <p class="col-md-9 col-centered">
             @foreach (var page in Model.pagemodel)
             {
@@ -118,7 +121,7 @@
                                         <textarea rows="7" cols="50" id="message" class="required" placeholder="Meddelande"></textarea>
                                     </li> <!-- END input-name -->
                                 </ul> <!-- END #contact -->
-                                <button type="submit" class="btn btn-primary btn-lg pull-right">Skicka</button>
+                                <!--<button type="submit" class="btn btn-primary btn-lg pull-right">Skicka</button>-->
                             </form>
 
                         </div> <!-- END .col-md-7 -->

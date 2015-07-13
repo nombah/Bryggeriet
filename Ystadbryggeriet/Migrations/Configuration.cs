@@ -20,9 +20,9 @@ namespace Ystadbryggeriet.Migrations
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
 
-            if (!context.Users.Any(t => t.UserName == "admin@bryggeriet.com"))
+            if (!context.Users.Any(t => t.UserName == "admin2@bryggeriet.com"))
             {
-                var user = new ApplicationUser { UserName = "admin@bryggeriet.com", Email = "admin@bryggeriet.com" };
+                var user = new ApplicationUser { UserName = "admin2@bryggeriet.com", Email = "admin2@bryggeriet.com" };
                 userManager.Create(user, "passW0rd!");
 
                 context.Roles.AddOrUpdate(r => r.Name, new IdentityRole { Name = "Admin" });

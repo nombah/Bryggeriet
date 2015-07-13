@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Ystadbryggeriet.Models;
+using Microsoft.AspNet.Identity;
+using System.Security.Claims;
 
 namespace Ystadbryggeriet.Areas.Admin.Controllers
 {
@@ -19,6 +21,7 @@ namespace Ystadbryggeriet.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var calendarEvents = db.CalendarEvents.Include(c => c.user);
+            ViewBag.UserName = "Kalle";
             return View(calendarEvents.ToList());
         }
 
@@ -39,7 +42,7 @@ namespace Ystadbryggeriet.Areas.Admin.Controllers
 
         public JsonResult GetEvents()
         {
-            var Events = db.CalendarEvents.Select(x => new { id = x.CalendarEventId,classname = x.user.Role, starttime = x.StartTime,endtime = x.EndTime,allDay = x.IsAllDay, title = x.user.Name}).ToList();
+            var Events = db.CalendarEvents.Select(x => new { id = x.CalendarEventId,classname = x.user.Name, starttime = x.StartTime,endtime = x.EndTime,allDay = x.IsAllDay, title = x.user.Name}).ToList();
             var eventt = new List<dynamic>();
             foreach(var EventDate in Events)
 

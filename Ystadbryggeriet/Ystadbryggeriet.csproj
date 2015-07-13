@@ -520,6 +520,7 @@
     <Content Include="Content\img\logo6.png" />
     <Content Include="Content\img\mapicon.png" />
     <Content Include="Content\img\slide1.jpg" />
+    <Content Include="Content\img\slide2.jpg" />
     <Content Include="Content\img\slideFive.jpg" />
     <Content Include="Content\img\slideFour.jpg" />
     <Content Include="Content\img\slideOne.jpg" />

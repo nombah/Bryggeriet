@@ -23,6 +23,11 @@ namespace Ystadbryggeriet.Areas.Admin.Controllers
             PageViewmodel.pagemodel = db.PageModels.ToList();
             PageViewmodel.Users = db.Users.ToList();
             PageViewmodel.Unread = unread;
+            if (unread > 0) 
+            { 
+                ViewBag.unread = unread; 
+            }
+
             return View(PageViewmodel);
         }
         public ActionResult Gallery()
